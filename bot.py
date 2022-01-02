@@ -47,8 +47,8 @@ async def on_raw_reaction_add(payload):
                 role = discord.utils.get(payload.member.guild.roles, name = role.name)
                 await payload.member.remove_roles(role)
 
-        emoji = bot.get_emoji(payload.emoji.id)
-        await payload.member.send(f'You got {emoji} color')
+#         emoji = bot.get_emoji(payload.emoji.id)
+#         await payload.member.send(f'You got {emoji} color')
 
         role = discord.utils.get(payload.member.guild.roles, name = payload.emoji.name)
         await payload.member.add_roles(role)
