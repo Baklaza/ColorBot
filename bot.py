@@ -39,7 +39,8 @@ async def rolegive(ctx):
 @bot.event
 async def on_raw_reaction_add(payload):
     emoji_list = ['Red', 'Orange', 'Yellow', 'Green', 'Cyan', 'Blue', 'Purple']
-    if payload.message_id == 927151392030867476 and payload.emoji.name in emoji_list:
+    msg_id = os.environ.get('MESSAGE_ID')
+    if payload.message_id == int(msg_id) and payload.emoji.name in emoji_list:
 
         for role in payload.member.roles:
             if role.name in emoji_list:
