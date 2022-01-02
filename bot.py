@@ -85,9 +85,9 @@ async def on_raw_reaction_remove(payload):
         #         await payload.member.remove_roles(role)
         # print(payload)
         guild = bot.get_guild(payload.guild_id)
-        user = bot.get_user(payload.user_id)
+        member = guild.get_member(payload.user_id)
         role = discord.utils.get(guild.roles, name = payload.emoji.name)
-        await user.remove_roles(role)
+        await member.remove_roles(role)
 
 
 
